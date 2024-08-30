@@ -37,7 +37,7 @@ def main() -> None:
     with open(sys.argv[1], 'r') as shell_file:
         shellcode = shell_file.read()
     if 'IP' not in shellcode or 'PORT' not in shellcode:
-        raise ValueError("There is no IP or port to change. Add an IP address by putting 'IP' and 'PORT' where they need to be set in your shellcode")
+        raise ValueError("There is no IP or port to change. Add an IP address by putting 'IP' and 'PORT' where they need to be set in your shellcode. This script only works for IPv4 addresses and ports.")
     shellcode = shellcode.replace('"','')
     shellcode = shellcode.replace('\n','')
     shellcode = shellcode.replace(' ','')
